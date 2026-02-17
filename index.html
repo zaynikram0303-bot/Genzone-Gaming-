@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GenZone | Elite Gaming Experience</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Orbitron',sans-serif;
+}
+
+body{
+background: linear-gradient(to bottom,#0a0014,#140028);
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+width:100%;
+background:rgba(0,0,0,0.9);
+padding:15px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+backdrop-filter:blur(10px);
+}
+
+nav img{
+height:55px;
+}
+
+nav a{
+color:#b57cff;
+margin-left:25px;
+text-decoration:none;
+font-size:14px;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+position:relative;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
+animation:fade 18s infinite;
+}
+
+.slide:nth-child(1){background-image:url('zone1.jpg');animation-delay:0s;}
+.slide:nth-child(2){background-image:url('zone2.jpg');animation-delay:6s;}
+.slide:nth-child(3){background-image:url('zone3.jpg');animation-delay:12s;}
+
+@keyframes fade{
+0%{opacity:0;}
+10%{opacity:1;}
+30%{opacity:1;}
+40%{opacity:0;}
+100%{opacity:0;}
+}
+
+.hero-overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.75);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero-overlay img{
+width:220px;
+margin-bottom:20px;
+}
+
+.hero-overlay h1{
+font-size:40px; /* smaller now */
+color:#b57cff;
+letter-spacing:3px;
+}
+
+.hero-overlay p{
+margin:15px 0;
+font-size:16px;
+}
+
+/* BUTTONS */
+.btn{
+padding:12px 30px;
+margin:10px;
+border:none;
+background:#25D366;
+color:white;
+cursor:pointer;
+border-radius:30px;
+transition:0.4s;
+font-weight:bold;
+}
+
+.btn:hover{
+background:white;
+color:#25D366;
+}
+
+/* SECTION */
+section{
+padding:120px 10%;
+}
+
+.section-title{
+text-align:center;
+font-size:38px;
+margin-bottom:50px;
+color:#b57cff;
+}
+
+/* PRICE IMAGE */
+.price-image-container{
+text-align:center;
+}
+
+.price-image-container img{
+width:100%;
+max-width:900px;
+border-radius:20px;
+box-shadow:0 0 40px #6a00ff;
+transition:0.4s;
+}
+
+.price-image-container img:hover{
+transform:scale(1.02);
+box-shadow:0 0 60px #b57cff;
+}
+
+/* GAMES */
+.games{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.game-card{
+background:#1a0033;
+padding:20px;
+border-radius:20px;
+text-align:center;
+}
+
+/* MAP */
+iframe{
+width:100%;
+height:400px;
+border-radius:15px;
+margin-top:30px;
+}
+
+/* FLOAT BUTTON */
+.float-buttons{
+position:fixed;
+bottom:20px;
+right:20px;
+z-index:999;
+}
+
+.float-buttons a{
+background:#25D366;
+color:white;
+padding:18px;
+border-radius:50%;
+text-align:center;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 0 20px #25D366;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<img src="logo.jpg" alt="GenZone Logo">
+<div>
+<a href="#prices">Prices</a>
+<a href="#games">Games</a>
+<a href="#contact">Location</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<div class="slide"></div>
+<div class="slide"></div>
+<div class="slide"></div>
+
+<div class="hero-overlay">
+<img src="logo.jpg" alt="GenZone Logo">
+<h1>ELITE GAMING EXPERIENCE</h1>
+<p>Power. Performance. Prestige.</p>
+
+<a href="https://wa.me/923392154933?text=Hi%20GENZONE,%20I%20want%20to%20book%20a%20gaming%20slot." target="_blank">
+<button class="btn">BOOK VIA WHATSAPP</button>
+</a>
+
+<a href="tel:03392154933">
+<button class="btn" style="background:#6a00ff;">CALL NOW</button>
+</a>
+</div>
+</div>
+
+<!-- PRICE SECTION (IMAGE ADDED) -->
+<section id="prices">
+<h2 class="section-title">Our Pricing</h2>
+
+<div class="price-image-container">
+<img src="pricemenu.jpg" alt="GenZone Price Menu">
+</div>
+</section>
+
+<!-- GAMES -->
+<section id="games">
+<h2 class="section-title">Games We Offer</h2>
+
+<div class="games">
+<div class="game-card"><h3>Counter Strike 2</h3></div>
+<div class="game-card"><h3>Valorant</h3></div>
+<div class="game-card"><h3>GTA 5</h3></div>
+<div class="game-card"><h3>FIFA</h3></div>
+<div class="game-card"><h3>Tekken</h3></div>
+</div>
+</section>
+
+<!-- LOCATION -->
+<section id="contact">
+<h2 class="section-title">Find GenZone</h2>
+
+<div style="text-align:center;">
+Moon Garden, Mezzanine Floor<br>
+Block 10-A, Gulshan-e-Iqbal<br>
+Near Madina Blessing Apartment<br>
+Karachi, Pakistan<br><br>
+📞 0339 2154933
+</div>
+
+<iframe 
+src="https://www.google.com/maps?q=Moon%20Garden%20Gulshan%20Karachi&output=embed">
+</iframe>
+</section>
+
+<!-- FLOAT WHATSAPP -->
+<div class="float-buttons">
+<a href="https://wa.me/923392154933" target="_blank">💬</a>
+</div>
+
+</body>
+</html>
