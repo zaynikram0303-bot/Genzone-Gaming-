@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -37,13 +38,24 @@ backdrop-filter:blur(10px);
 
 nav img{
 height:55px;
+transition:0.4s;
+}
+
+nav img:hover{
+transform:scale(1.1);
+filter:drop-shadow(0 0 20px #b57cff);
 }
 
 nav a{
 color:#b57cff;
 margin-left:25px;
 text-decoration:none;
+transition:0.3s;
 font-size:14px;
+}
+
+nav a:hover{
+color:white;
 }
 
 /* HERO */
@@ -87,22 +99,29 @@ text-align:center;
 }
 
 .hero-overlay img{
-width:220px;
-margin-bottom:20px;
+width:240px;
+margin-bottom:25px;
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+100%{transform:translateY(0);}
 }
 
 .hero-overlay h1{
-font-size:40px; /* smaller now */
+font-size:42px; /* slightly reduced */
 color:#b57cff;
 letter-spacing:3px;
 }
 
 .hero-overlay p{
-margin:15px 0;
-font-size:16px;
+margin:20px 0;
+font-size:18px;
+letter-spacing:2px;
 }
 
-/* BUTTONS */
 .btn{
 padding:12px 30px;
 margin:10px;
@@ -112,7 +131,6 @@ color:white;
 cursor:pointer;
 border-radius:30px;
 transition:0.4s;
-font-weight:bold;
 }
 
 .btn:hover{
@@ -127,8 +145,8 @@ padding:120px 10%;
 
 .section-title{
 text-align:center;
-font-size:38px;
-margin-bottom:50px;
+font-size:42px;
+margin-bottom:60px;
 color:#b57cff;
 }
 
@@ -161,10 +179,50 @@ gap:30px;
 background:#1a0033;
 padding:20px;
 border-radius:20px;
+transition:0.4s;
 text-align:center;
 }
 
-/* MAP */
+.game-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+.game-card:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px #6a00ff;
+}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.gallery img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:15px;
+transition:0.4s;
+filter:brightness(80%);
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px #6a00ff;
+filter:brightness(100%);
+}
+
+/* CONTACT */
+.contact{
+text-align:center;
+}
+
 iframe{
 width:100%;
 height:400px;
@@ -172,24 +230,34 @@ border-radius:15px;
 margin-top:30px;
 }
 
-/* FLOAT BUTTON */
+/* FLOAT BUTTONS */
 .float-buttons{
 position:fixed;
 bottom:20px;
 right:20px;
+display:flex;
+flex-direction:column;
+gap:15px;
 z-index:999;
 }
 
 .float-buttons a{
 background:#25D366;
 color:white;
-padding:18px;
+padding:15px;
 border-radius:50%;
 text-align:center;
-font-size:22px;
+font-size:20px;
 text-decoration:none;
-box-shadow:0 0 20px #25D366;
+box-shadow:0 0 15px #25D366;
+transition:0.3s;
 }
+
+.float-buttons a:hover{
+transform:scale(1.1);
+background:#b57cff;
+}
+
 </style>
 </head>
 
@@ -200,6 +268,7 @@ box-shadow:0 0 20px #25D366;
 <div>
 <a href="#prices">Prices</a>
 <a href="#games">Games</a>
+<a href="#gallery">Gallery</a>
 <a href="#contact">Location</a>
 </div>
 </nav>
@@ -219,54 +288,62 @@ box-shadow:0 0 20px #25D366;
 <button class="btn">BOOK VIA WHATSAPP</button>
 </a>
 
-<a href="tel:03392154933">
-<button class="btn" style="background:#6a00ff;">CALL NOW</button>
-</a>
+<a href="tel:03392154933"><button class="btn" style="background:#6a00ff;">CALL NOW</button></a>
 </div>
 </div>
 
-<!-- PRICE SECTION (IMAGE ADDED) -->
+<!-- PRICE SECTION ADDED -->
 <section id="prices">
 <h2 class="section-title">Our Pricing</h2>
-
 <div class="price-image-container">
 <img src="pricemenu.jpg" alt="GenZone Price Menu">
 </div>
 </section>
 
-<!-- GAMES -->
+<!-- GAMES SECTION (UNCHANGED) -->
 <section id="games">
 <h2 class="section-title">Games We Offer</h2>
 
 <div class="games">
-<div class="game-card"><h3>Counter Strike 2</h3></div>
-<div class="game-card"><h3>Valorant</h3></div>
-<div class="game-card"><h3>GTA 5</h3></div>
-<div class="game-card"><h3>FIFA</h3></div>
-<div class="game-card"><h3>Tekken</h3></div>
+<div class="game-card"><img src="csgo.jpg"><h3>Counter Strike Global Offensive</h3></div>
+<div class="game-card"><img src="valorant.jpg"><h3>Valorant</h3></div>
+<div class="game-card"><img src="gta5.jpg"><h3>GTA 5</h3></div>
+<div class="game-card"><img src="fifa.jpg"><h3>FIFA</h3></div>
+<div class="game-card"><img src="tekken.jpg"><h3>Tekken</h3></div>
 </div>
 </section>
 
-<!-- LOCATION -->
-<section id="contact">
-<h2 class="section-title">Find GenZone</h2>
+<!-- GALLERY (UNCHANGED) -->
+<section id="gallery">
+<h2 class="section-title">Inside GenZone</h2>
+<div class="gallery">
+<img src="zone1.jpg">
+<img src="zone2.jpg">
+<img src="zone3.jpg">
+</div>
+</section>
 
-<div style="text-align:center;">
+<!-- CONTACT -->
+<section id="contact">
+<h2 class="section-title">Find Us</h2>
+
+<div class="contact">
+<p>
 Moon Garden, Mezzanine Floor<br>
 Block 10-A, Gulshan-e-Iqbal<br>
-Near Madina Blessing Apartment<br>
-Karachi, Pakistan<br><br>
-📞 0339 2154933
-</div>
+Near Madina Blessing Apartment<br><br>
+📞 0339 2154933<br>
+Instagram: @genzonegaming
+</p>
 
-<iframe 
-src="https://www.google.com/maps?q=Moon%20Garden%20Gulshan%20Karachi&output=embed">
-</iframe>
+<iframe src="https://www.google.com/maps?q=Moon%20Garden%20Gulshan%20Karachi&output=embed"></iframe>
+</div>
 </section>
 
-<!-- FLOAT WHATSAPP -->
+<!-- FLOAT BUTTONS -->
 <div class="float-buttons">
 <a href="https://wa.me/923392154933" target="_blank">💬</a>
+<a href="https://instagram.com/genzonegaming" target="_blank">📷</a>
 </div>
 
 </body>
